@@ -1,0 +1,94 @@
+Assignment for Java bootCamp by Lets_upgrade
+
+
+Wap to check whether the number is palindrome or not
+Wap to calculate sum of digital of a number
+Wap to print. Prime number from 1 to 100
+
+------------------------------------------------------
+
+import java.util.Scanner;
+
+public class PalindromeNumber {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);  // Scanner class to get the input from the user.
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+        int temp = num;                         // a temporary variable temp and initialize it with num.
+        int rev = 0;
+
+        while(temp > 0) {                       // while loop to reverse the number and store it in rev. The loop will run until the temp variable is greater than 0.
+            int rem = temp % 10;
+            rev = rev * 10 + rem;
+            temp = temp / 10;
+        }
+
+        if(num == rev) {
+            System.out.println("The number is a palindrome.");
+        } else {
+            System.out.println("The number is not a palindrome.");
+        }
+
+        input.close();
+    }
+}
+
+---------------------------------------------------------------
+
+Q2.Wap to calculate sum of digital of a number
+
+
+import java.util.Scanner;
+
+public class SumOfDigits {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter a number: ");
+        int num = input.nextInt();
+
+        int sum = 0;
+
+        while (num > 0) {
+            int digit = num % 10;
+            sum += digit;
+            num =  num / 10;
+        }
+
+        System.out.println("The sum of digits is: " + sum);
+
+        input.close();
+    }
+}
+
+---------------------------------------------------------------
+ 
+Q.3 Wap to print. Prime number from 1 to 100
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+
+        System.out.println("Prime numbers between 1 and 100:");
+
+        for (int i = 2; i <= 100; i++) {           // for loop to iterate over each number from 2 to 100. Note that 1 is not a prime number, so we start from 2.
+            boolean isPrime = true;
+
+            for (int j = 2; j < i; j++) {         // Use another for loop to check if the number is actually prime or not. Iterate over each number from 2 to i-1.
+                if (i % j == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+}
+
+
